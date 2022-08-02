@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const login = async()=>{
+    let login = await fetch("http://127.0.0.1:8000/login/",{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+            username:'nadav',
+            password: 123
+        })})
+        let token = await login.json()
+        localStorage.setItem('token',JSON.stringify(token.access))
+        console.log(token)
+};
+
+const getFlights = async ()=>{
+    let roro = await fetch('http://127.0.0.1:8000/getflights/')
+    let flights =await roro.json()
+    console.log(flights)
+    localStorage.setItem('flights',JSON.stringify(flights))
+
+}
+const getUsers = async()=>{
+    let token = JSON.parse(localStorage.getItem('token'))
+    let getusers = await fetch(`http://127.0.0.1:8000/users/`,{
+        headers:{
+            'Content-Type':'application/json',
+            Authorization:'Bearer '+String(token)
+        }
+        })
+    const users = await getusers.json()
+    console.log(JSON.stringify(users))
+        
+};
+
+
+    </script>
+    <button onclick="login()">LOGIN</button>
+<button onclick="getFlights()">GET FLIGHTS</button>
+<button onclick="getUsers()">USERSS</button>
+<table >
+    <thead>
+        <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>email</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        
+    
+    </tbody>
+</table>
+</body>
+</html>
