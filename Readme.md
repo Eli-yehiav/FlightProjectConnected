@@ -7,6 +7,8 @@
 * git push -u origin main
 
 # Git Repo Update
+* git pull origin
+
 * git add .
 * git commit -m ""
 * git push origin main
