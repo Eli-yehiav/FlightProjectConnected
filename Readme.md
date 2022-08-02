@@ -12,4 +12,9 @@
 * git add .
 * git commit -m ""
 * git push origin main
+<<<<<<< HEAD
 eli is in town
+=======
+
+nadav is in the town
+>>>>>>> e2fcde1a5d691ff9d4585d068c8fdba31df9dcf2
