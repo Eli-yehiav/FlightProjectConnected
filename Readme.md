@@ -7,9 +7,12 @@
 * git push -u origin main
 
 # Git Repo Update
+* git pull origin
+
 * git add .
 * git commit -m ""
 * git push origin main
 
 nadav is in the town
 hello eli kono stas ?
+eli is in town
