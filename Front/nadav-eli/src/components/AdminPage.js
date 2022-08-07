@@ -1,13 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {  useDispatch, useSelector } from 'react-redux'
-// import { selectAdmin, selectAdmin } from '../slicers/FlightsSlice'
 import { selectUser } from '../slicers/UserSlice'
 
 export const AdminPage = () => {
     const user = useSelector(selectUser)
     const [allusers, setallusers] = useState([])
-    // const dispatch= useDispatch()
    
 useEffect(() => {
     async function getallusers(){

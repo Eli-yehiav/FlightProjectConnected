@@ -7,6 +7,7 @@ import Register from './components/Register';
 import HomePlaceholder from './components/HomePlaceholder';
 import { Flights } from './components/Flights';
 import AdminPage from './components/AdminPage';
+
 function App() {
   return (
     <BrowserRouter >
